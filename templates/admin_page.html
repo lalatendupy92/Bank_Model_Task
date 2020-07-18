@@ -1,0 +1,36 @@
+{% load static %}
+
+<html>
+    <body>
+        <h1 style="text-align: center">
+            USER DATA
+        </h1>
+
+        <table align="center" border="2">
+            {% for x in user_data %}
+                <tr><th>USER ID</th>
+                    <th>USER NAME</th>
+                    <th>USER PHONE NO</th>
+                    <th>USER EMAIL ID</th>
+                    <th>USER ACCOUNT TYPE</th>
+                    <th>UESR IMAGE</th>
+                    <th>REQUEST STATUS</th>
+                </tr>
+            <tr>
+                <th>{{ x.user_id }}</th>
+                <th>{{ x.user_name }}</th>
+                <th>{{ x.user_phone }}</th>
+                <th>{{ x.user_email }}</th>
+                <th>{{ x.user_account_type }}</th>
+                <th>
+                    <img src="{{ x.user_photo.url }}"width="50" height="50">
+                </th>
+            <th>
+                <a href="{% url 'pending_status' %}">status</a>
+            </th>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </body>
+</html>

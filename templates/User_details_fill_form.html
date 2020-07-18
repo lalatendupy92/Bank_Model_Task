@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <h2 style="text-align: center ">
+            Fill The Form
+        </h2>
+    <form action="{% url 'save_user_details' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <table align="center" border="1">
+        <tr>
+            <th>{{ user_form.user_name.label }}</th>
+            <th>{{ user_form.user_name }}</th>
+            <th>{{ user_form.user_name.errors }}</th>
+        </tr>
+        <tr>
+            <th>{{ user_form.user_phone.label }}</th>
+            <th>{{ user_form.user_phone }}</th>
+            <th>{{ user_form.user_phone.errors }}</th>
+        </tr>
+        <tr>
+            <th>{{ user_form.user_email.label }}</th>
+            <th>{{ user_form.user_email }}</th>
+            <th>{{ user_form.user_email.errors }}</th>
+        </tr><tr>
+            <th>{{ user_form.user_account_type.label }}</th>
+            <th>{{ user_form.user_account_type }}</th>
+            <th>{{ user_form.user_account_type.errors }}</th>
+
+        </tr><tr>
+            <th>{{ user_form.user_photo.label }}</th>
+            <th>{{ user_form.user_photo }}</th>
+            <th>{{ user_form.user_photo.errors }}</th>
+    </tr>
+        <tr>
+            <td style="text-align: center" colspan="2">
+                <button type="submit">Register</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+
+    </body>
+</html>

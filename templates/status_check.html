@@ -1,0 +1,30 @@
+<html>
+    <body>
+    <h1 style="text-align: center">
+        CHECK STATUS
+    </h1>
+
+    <table align="center" border="2">
+        <tr>
+            <th>USER ID</th>
+            <th>USER NAME</th>
+            <th>USER PHONE NO</th>
+            <th>USER EMAIL ID</th>
+            <th>USER ACCOUNT TYPE</th>
+            <th>OPERATION</th>
+        </tr>
+        <tr>
+                {% for x in status_check %}
+                   <th>{{ x.user_id }}</th>
+                   <th>{{ x.user_name }}</th>
+                    <th>{{ x.user_phone }}</th>
+                    <th>{{ x.user_email }}</th>
+                    <th>{{ x.user_account_type }}</th>
+                <th>
+
+                    <a href="{% url 'approve_status' %}?uid={{ x.user_id }}">approve</a>/<a href="{% url 'reject_status' %}?uid={{ x.user_id }}">reject</a></th>
+            {% endfor%}
+        </tr>
+    </table>
+    </body>
+</html>

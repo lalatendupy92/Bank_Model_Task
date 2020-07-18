@@ -1,0 +1,36 @@
+<html>
+    <body>
+    <h1 style="text-align: center">
+            DO YOUR OPERATION
+        </h1>
+    <table align="center">
+        <tr>
+            <th>
+        <h3 style="text-align: center">
+        <a href="{% url 'user_details_data' %}">
+            click here to open account
+        </a></h3></th>
+        <tr>
+        <th>
+            <h4>
+        <a href="{% url 'admin_page' %}">
+            admin
+        </a>
+            </h4>
+    </th>
+        </tr>
+    </table>
+    <table align="center">
+    {% for x in messages %}
+        <tr>
+        <th>
+            <h1 style="text-align: center">
+                {{ x }}
+            </h1>
+        </th>
+        </tr>
+
+    {% endfor %}
+    </table>
+    </body>
+</html>
