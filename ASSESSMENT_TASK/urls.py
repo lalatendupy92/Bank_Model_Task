@@ -29,7 +29,9 @@ urlpatterns = [
     path('admin_page/',views.Admin_Page.as_view(), name='admin_page'),
     path('pending_status/',views.pending_status, name = 'pending_status'),
     path('approve_status/',views.approve_status, name ='approve_status'),
-    path('reject_status/',views.reject_status,name='reject_status')
+    path('reject_status/',views.reject_status,name='reject_status'),
+    path('see_all_data/',views.see_all_data,name='see_all_data'),
+    # path('search/',views.search, name = 'search')
 ]
 
 

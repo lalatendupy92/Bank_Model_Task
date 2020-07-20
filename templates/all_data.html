@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <table align="center" border="2">
+            <tr>
+                <th colspan="7">
+                    <h2 style="text-align: center">ALL DATA</h2>
+                </th>
+            </tr>
+            <tr>
+                    <th>USER ID</th>
+                    <th>USER NAME</th>
+                    <th>USER PHONE NO</th>
+                    <th>USER EMAIL ID</th>
+                    <th>USER ACCOUNT TYPE</th>
+                    <th>OPERATION</th>
+                    <th>Filter</th>
+            </tr>
+            <tr>
+                {% for x in user_data %}
+                    <th>{{ x.user_id }}</th>
+                    <th>{{ x.user_name }}</th>
+                    <th>{{ x.user_phone }}</th>
+                    <th>{{ x.user_email }}</th>
+                    <th>{{ x.user_account_type }}</th>
+                    <th>{{ x.user_status }}</th>
+                    {% endfor %}
+            </tr>
+
+        </table>
+    <div class="topnav">
+                        <form>
+                    <input type="text" placeholder="Search.." name="filter">
+                        <input type="submit" value="Search">
+                        </form>
+                    </div>
+    </body>
+</html>

@@ -49,7 +49,8 @@ def approve_status(request):
         'Account Status.',
         'Congrats..Your Account status is approved.',
         settings.EMAIL_HOST_USER,
-        [user_obj[0].user_email, ]
+        [user_obj[0].user_email, ],
+        fail_silently=False
     )
     return render(request,'status_check.html',{"messeage":"Request approved."})
 
@@ -65,3 +66,30 @@ def reject_status(request):
         [user_obj[0].user_email,]
     )
     return redirect('pending_status')
+
+
+def see_all_data(request):
+    filter_id = request.GET.get('filter')
+    print(filter_id)
+    if request.GET.get != 'None':
+        try:
+            user_data = User_Details.objects.filter(user_status=filter_id)
+        except:
+            user_data = User_Details.objects.none()
+        return render(request,'all_data.html',{'user_data':user_data})
+    else:
+        user_data=User_Details.objects.all()
+        return render(request,'all_data.html',{'user_data':user_data})
+
+
+# def search(request):
+#     if request.method=='GET':
+#         filter_id = request.GET.get('filter')
+#         if request.GET.get !='None':
+#             try:
+#                 User_Details.objects.filter(user_status=filter_id)
+#             except:
+#                 User_Details.objects.none()
+#         return redirect('see_all_data')
+#     return redirect('pending_status')
+

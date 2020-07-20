@@ -1,4 +1,4 @@
-{% load static %}
+
 
 <html>
     <body>
@@ -6,7 +6,7 @@
             USER DATA
         </h1>
 
-        <table align="center" border="2">
+        <table align="center" >
             {% for x in user_data %}
                 <tr><th>USER ID</th>
                     <th>USER NAME</th>
@@ -15,6 +15,8 @@
                     <th>USER ACCOUNT TYPE</th>
                     <th>UESR IMAGE</th>
                     <th>REQUEST STATUS</th>
+                <th>
+           </th>
                 </tr>
             <tr>
                 <th>{{ x.user_id }}</th>
